@@ -16,7 +16,9 @@
     <tags>Illumina BaseSpace networking http range-request</tags>
     <language>en-US</language>
     <copyright>illumina 2013 and contributors</copyright>
-   <dependencies>   
+   <dependencies>
+     <dependency id="System.ComponentModel.EventBasedAsync" version="4.3.0" />
+     <dependency id="System.Runtime.Serialization.Formatters" version="4.3.0" />
    </dependencies>
   </metadata>
  

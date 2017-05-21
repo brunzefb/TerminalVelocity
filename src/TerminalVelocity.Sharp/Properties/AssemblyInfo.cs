@@ -2,6 +2,9 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+
+//Install-Package NETStandard.Library -Version 2.1.0-preview1-25319-01 -Source https://dotnet.myget.org/F/dotnet-core/api/v3/index.json
+
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
