@@ -629,31 +629,7 @@ namespace Illumina.TerminalVelocity.Tests
             ValidateGZip(path, parameters.FileSize, Constants.FIVE_MEG_CHECKSUM);
         }
 
-        [Test]
-        public void DownloadSmallerFileWriteToStream()
-        {
-            //8 threads
-            //MaxChunkSize = 1048576
-            //FileSize = 5242880
-
-            var uri = new Uri(Constants.FIVE_MEG_FILE);
-            var path = SafePath("sites_vcf.gz");
-            Action<string> logger = (message) => { };
-            var timer = new Stopwatch();
-            timer.Start();
-            using (var fs = new FileStream(path, FileMode.OpenOrCreate))
-            {
-                ILargeFileDownloadParameters parameters = new LargeFileDownloadWithStreamParameters(uri,fs , 1048576,
-                                                                                                    maxThreads: 8);
-                Task task = parameters.DownloadAsync(logger: logger);
-                task.Wait(TimeSpan.FromMinutes(1));
-                timer.Stop();
-                Debug.WriteLine("Took {0} threads {1} ms", 8, timer.ElapsedMilliseconds);
-           
-            //try to open the file
-            ValidateGZip(path, parameters.FileSize, Constants.FIVE_MEG_CHECKSUM);
-                 }
-        }
+ 
 
         [Test]
         public void TestStaleWriteEmptyStack()

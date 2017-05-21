@@ -38,7 +38,7 @@ namespace Illumina.TerminalVelocity.Tests
                 client = new SimpleHttpGetByRangeClient(new Uri(Constants.ONE_GIG_FILE_S_SL), timeout: 1);
                  response = client.Get(0, 1024*10); //something large
             }
-            catch (IOException ex)
+            catch (IOException)
             {
                 
             }
